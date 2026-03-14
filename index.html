@@ -43,19 +43,25 @@
     <div class="flex items-start gap-4 sm:gap-5">
 
       <!-- Avatar -->
-      <div class="flex-shrink-0 w-35 h-35 rounded-lg overflow-hidden border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 group relative">
-        <img
-            :src="dark ? '/images/alvin.jpeg' : '/images/alvin_light.png'"
-            alt="Alvin Nario"
-            class="avatar-img w-full h-full object-cover object-top absolute opacity-100 group-hover:opacity-0 transition-opacity duration-300"
-            onerror="this.outerHTML='<div class=\'w-full h-full flex items-center justify-center text-4xl\'>👤</div>'"
-        />
-        <img
-            :src="dark ? '/images/alvin1.jpeg' : '/images/alvin1_light.png'"
-            alt="Alvin Nario Hover"
-            class="avatar-img w-full h-full object-cover object-top absolute opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-            onerror="this.outerHTML='<div class=\'w-full h-full flex items-center justify-center text-4xl\'>👤</div>'"
-        />
+      <div class="flex-shrink-0 w-35 h-35 rounded-lg overflow-hidden border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 relative cursor-pointer"
+          x-data="{ tapped: false }"
+          @click="tapped = !tapped"
+          @mouseenter="tapped = true"
+          @mouseleave="tapped = false">
+          <img
+              :src="dark ? '/images/alvin.jpeg' : '/images/alvin_light.png'"
+              alt="Alvin Nario"
+              class="avatar-img absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-300"
+              :class="tapped ? 'opacity-0' : 'opacity-100'"
+              onerror="this.outerHTML='<div class=\'w-full h-full flex items-center justify-center text-4xl\'>👤</div>'"
+          />
+          <img
+              :src="dark ? '/images/alvin1.jpeg' : '/images/alvin1_light.png'"
+              alt="Alvin Nario Hover"
+              class="avatar-img absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-300"
+              :class="tapped ? 'opacity-100' : 'opacity-0'"
+              onerror="this.outerHTML='<div class=\'w-full h-full flex items-center justify-center text-4xl\'>👤</div>'"
+          />
       </div>
 
       <!-- Info block -->
