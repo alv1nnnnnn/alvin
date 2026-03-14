@@ -1,54 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" x-data="portfolio()" :class="{ 'dark': dark }">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Alvin Nario - Developer</title>
 
-  <!-- Import Tailwind CSS via Vite -->
   <link rel="stylesheet" href="/resources/css/app.css">
-  
-  <!-- Define portfolio data globally before Alpine.js -->
-  <script>
-    window.portfolio = function() {
-      return {
-        dark: false,
-        experience: [
-          { title: 'Backend Developer', company: 'freelance', year: '2024-present' },
-          { title: 'Intern - Backend Developer', company: 'Philcomsat Inc.', year: '2024' },
-          { title: 'Capstone Project Lead', company: 'Bicol University', year: '2023-2024' },
-        ],
-        techStack: [
-          {
-            label: 'Backend',
-            items: ['PHP', 'Laravel', 'MySQL', 'PostgreSQL', 'API Design']
-          },
-          {
-            label: 'DevOps',
-            items: ['AWS', 'Docker', 'Linux']
-          },
-          {
-            label: 'Frontend',
-            items: ['JavaScript', 'Tailwind CSS', 'Alpine.js']
-          }
-        ],
-        projects: [
-          { name: 'Portfolio Website', description: 'Personal portfolio built with Laravel & Vite', tech: 'Laravel, Vite, Tailwind CSS' },
-          { name: 'RESTful API System', description: 'Scalable API for university management', tech: 'PHP, Laravel, MySQL' },
-          { name: 'Admin Dashboard', description: 'Full-stack admin panel', tech: 'Laravel, Bootstrap' }
-        ],
-        education: [
-          { school: 'Bicol University', degree: 'BS Information Technology', year: 'Graduated Cum Laude 2024', field: 'IT' }
-        ],
-        certifications: [
-          { name: 'AWS Basics', issuer: 'Amazon Web Services', year: '2024' },
-          { name: 'PHP Developer Certification', issuer: 'Udemy', year: '2023' }
-        ]
-      };
-    };
-  </script>
-  
-  <!-- Load Alpine.js -->
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="shortcut icon" href="/images/alvin.jpeg" type="image/x-icon">
@@ -71,12 +28,13 @@
     .stagger-5 { animation-delay: 0.25s; }
     .stagger-6 { animation-delay: 0.30s; }
 
+    /* Smooth touch scrolling */
     html { -webkit-tap-highlight-color: transparent; }
   </style>
 </head>
 
 <body class="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans text-sm antialiased transition-colors duration-300">
-<div class="max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-8 pb-16" x-data="portfolio()">
+<div class="max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-8 pb-16">
 
   <!-- ── HERO ── -->
   <div class="animate-fade-up mb-6">
@@ -186,9 +144,8 @@
           <p class="text-xs font-semibold uppercase tracking-widest text-black dark:text-zinc-500 mb-2" x-text="group.label"></p>
           <div class="flex flex-wrap gap-1.5">
             <template x-for="tech in group.items" :key="tech">
-              <span class="inline-flex items-center rounded-full bg-zinc-100 dark:bg-zinc-800 px-2.5 py-0.5 text-xs font-medium text-zinc-800 dark:text-zinc-300">
-                <span x-text="tech"></span>
-              </span>
+              <span class="px-2.5 sm:px-3 py-1 rounded-full bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-xs font-medium text-zinc-700 dark:text-zinc-300 hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors cursor-default"
+                    x-text="tech"></span>
             </template>
           </div>
         </div>
@@ -197,20 +154,140 @@
   </div>
 
   <!-- ── PROJECTS ── -->
-  <div class="border border-gray-100 dark:border-zinc-800 rounded-xl overflow-hidden mb-3 animate-fade-up stagger-4">
-    <div class="px-4 sm:px-5 py-3 text-xs font-semibold tracking-widest uppercase text-black dark:text-zinc-500">Projects</div>
-    <template x-for="project in projects" :key="project.name">
-      <div class="border-t border-gray-100 dark:border-zinc-800 px-4 sm:px-5 py-3 sm:py-3.5 hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-colors">
-        <p class="font-semibold text-sm" x-text="project.name"></p>
-        <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-0.5" x-text="project.description"></p>
-        <p class="text-xs text-zinc-600 dark:text-zinc-500 mt-1.5 font-mono" x-text="project.tech"></p>
-      </div>
-    </template>
+  <div class="border border-zinc-200 dark:border-zinc-800 rounded-xl overflow-hidden mb-3 animate-fade-up stagger-3">
+    <div class="px-4 sm:px-5 py-3 flex items-center justify-between">
+      <span class="text-xs font-semibold tracking-widest uppercase text-black dark:text-zinc-500">Projects</span>
+    </div>
+    <!-- 1 col on mobile, 2 cols on sm+ -->
+    <div class="p-3 sm:p-4 grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-2.5">
+      <template x-for="project in projects" :key="project.name">
+        <div class="border border-zinc-200 dark:border-zinc-800 rounded-lg p-3 sm:p-3.5 flex flex-col gap-1">
+          <p class="font-semibold text-sm leading-snug" x-text="project.name"></p>
+          <p class="text-xs text-zinc-500 dark:text-zinc-400 leading-snug flex-1" x-text="project.desc"></p>
+          <div class="flex items-center justify-between mt-2 gap-2">
+            <p class="text-xs font-mono text-zinc-400 dark:text-zinc-500" x-text="project.year"></p>
+            <template x-if="project.demo">
+              <a :href="project.demo"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800 text-xs font-medium text-blue-600 dark:text-blue-400 hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors flex-shrink-0">
+                <svg class="w-3 h-3 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                  <polyline points="15 3 21 3 21 9"/>
+                  <line x1="10" y1="14" x2="21" y2="3"/>
+                </svg>
+                Live Demo
+              </a>
+            </template>
+            <template x-if="!project.demo">
+              <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-zinc-50 dark:bg-zinc-800/60 border border-zinc-200 dark:border-zinc-700 text-xs font-medium text-zinc-400 dark:text-zinc-500 cursor-not-allowed select-none flex-shrink-0">
+                <svg class="w-3 h-3 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                </svg>
+                Private
+              </span>
+            </template>
+          </div>
+        </div>
+      </template>
+    </div>
   </div>
 
   <!-- ── EDUCATION ── -->
-  <div class="border border-gray-100 dark:border-zinc-800 rounded-xl overflow-hidden mb-3 animate-fade-up stagger-5">
-    <div class="px-4 sm:px-5 py-3 text-xs font-semibold tracking-widest uppercase text-black dark:text-zinc-500">Education</div>
+  <div class="border border-zinc-200 dark:border-zinc-800 rounded-xl overflow-hidden mb-3 animate-fade-up stagger-4">
+    <div class="px-4 sm:px-5 py-3 flex items-center justify-between">
+      <span class="text-xs font-semibold tracking-widest uppercase text-black dark:text-zinc-500">Education</span>
+    </div>
+    <div class="divide-y divide-zinc-100 dark:divide-zinc-800/60">
+      <template x-for="edu in education" :key="edu.school">
+        <div class="px-4 sm:px-5 py-4 flex items-start justify-between gap-3 sm:gap-4">
+          <div class="min-w-0 flex-1">
+            <p class="font-semibold text-sm leading-snug" x-text="edu.degree"></p>
+            <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-0.5 leading-snug" x-text="edu.school"></p>
+          </div>
+          <span class="text-xs font-mono text-zinc-400 dark:text-zinc-500 whitespace-nowrap flex-shrink-0 mt-0.5" x-text="edu.year"></span>
+        </div>
+      </template>
+    </div>
+  </div>
+
+  <!-- ── CERTIFICATIONS ── -->
+  <div class="border border-zinc-200 dark:border-zinc-800 rounded-xl overflow-hidden mb-3 animate-fade-up stagger-4">
+    <div class="px-4 sm:px-5 py-3 flex items-center justify-between">
+      <span class="text-xs font-semibold tracking-widest uppercase text-black dark:text-zinc-500">Certificates</span>
+    </div>
+    <!-- 1 col mobile, 2 cols sm+ -->
+    <div class="p-3 sm:p-4 grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-2.5">
+      <template x-for="cert in certifications" :key="cert.name">
+        <div class="border border-zinc-200 dark:border-zinc-800 rounded-lg p-3 sm:p-3.5 flex flex-col gap-0.5 hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-colors">
+          <p class="font-semibold text-sm" x-text="cert.name"></p>
+          <p class="text-xs text-zinc-500 dark:text-zinc-400" x-text="cert.issuer"></p>
+        </div>
+      </template>
+    </div>
+  </div>
+
+  <!-- ── CONTACT ── -->
+  <div class="border border-zinc-200 dark:border-zinc-800 rounded-xl overflow-hidden mb-3 animate-fade-up stagger-6">
+    <div class="px-4 sm:px-5 py-3 text-xs font-semibold tracking-widest uppercase text-black dark:text-zinc-500">Get in Touch</div>
+    <div class="p-3 sm:p-4 grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-2.5">
+      <a href="mailto:alvinnario56@gmail.com"
+         class="border border-zinc-200 dark:border-zinc-800 rounded-lg p-3 flex flex-col gap-1 hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-colors">
+        <span class="text-xs font-semibold uppercase tracking-widest text-black dark:text-zinc-500">Email</span>
+        <span class="text-xs font-medium text-blue-600 break-all">alvinnario56@gmail.com</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ── FOOTER ── -->
+  <footer class="text-center text-xs text-black dark:text-zinc-600 pt-4 border-t border-zinc-100 dark:border-zinc-800 mt-2">
+    © 2026 Alvin Nario. All rights reserved.
+  </footer>
+
+</div>
+
+<script>
+  function portfolio() {
+    return {
+      dark: false,
+
+      experience: [
+        { title: 'Junior Programmer',               company: 'Bicol University ICT Office',                  year: 'Oct 2025 – Present' },
+        { title: 'Internship (Backend Developer)',   company: 'StraStan Solutions Corp.',                     year: 'Feb – May 2025' },
+        { title: 'Backend Developer',               company: 'Bicol University – University Student Council', year: 'Aug 2024 – Mar 2026' },
+      ],
+
+      techStack: [
+        { label: 'Frontend',       items: ['JavaScript', 'HTML5', 'CSS3', 'Bootstrap', 'Tailwind CSS', 'Alpine.js'] },
+        { label: 'Backend',        items: ['PHP', 'Laravel', 'Livewire', 'MySQL', 'RESTful APIs'] },
+        { label: 'Cloud & DevOps', items: ['AWS Lambda', 'DynamoDB', 'MinIO S3', 'Git', 'GitHub'] },
+        { label: 'Other',          items: ['API Integration', 'Technical Support', 'Troubleshooting', 'Team Collaboration'] },
+      ],
+
+      projects: [
+        { name: 'Bicol University Merit System Promotion',                           desc: 'Backend using TALL stack + MinIO S3 for secure file storage and employee records.',             year: '2026',      demo: 'https://ibu.bicol-u.edu.ph/msp' },
+        { name: 'Bicol University Center of Excellence',                             desc: 'Backend system with Laravel, MySQL, user auth restricted to BU email accounts.',               year: '2025',      demo: 'https://coe.bicol-u.edu.ph/' },
+        { name: 'Bicol University – University Student Council Website',             desc: 'Laravel & MySQL backend with custom database migrations and student council info management.', year: '2024–2026', demo: 'https://v2.bu-usc.com/' },
+        { name: 'AgTech - Web Application for Farmer-Trader Market Optimization',   desc: 'Full-stack app for livestock, users, and transaction management with cloud deploy.',           year: '2024–2025', demo: 'https://agtech-livestock.infinityfree.me/' },
+        { name: 'Employee Attendance System',                                        desc: 'Full-stack dashboard for time tracking, attendance records, and access control.',              year: '2024',      demo: '' },
+        { name: 'Unboxed E-Commerce Platform',                                       desc: 'Personal e-commerce site with order processing and product catalog features.',                 year: '2024',      demo: '' },
+      ],
+
+      education: [
+        { degree: 'BS Information Technology — Cum Laude',         school: 'Bicol University, Legazpi City, Albay',            year: '2021–2025' },
+        { degree: 'Senior High School — General Academic Strand',  school: 'Macalaya National High School, Castilla, Sorsogon', year: '2019–2021' },
+      ],
+
+      certifications: [
+        { name: 'Backend Developer Certificate', issuer: 'University Student Council' },
+        { name: 'Internship Certificate',        issuer: 'StraStan Solutions Corp. Inc.' },
+      ],
+    }
+  }
+</script>
+</body>
+</html>
     <template x-for="edu in education" :key="edu.school">
       <div class="border-t border-gray-100 dark:border-zinc-800 px-4 sm:px-5 py-3 sm:py-3.5">
         <p class="font-semibold text-sm" x-text="edu.school"></p>
