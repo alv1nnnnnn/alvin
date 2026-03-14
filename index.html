@@ -288,25 +288,3 @@
 </script>
 </body>
 </html>
-    <template x-for="edu in education" :key="edu.school">
-      <div class="border-t border-gray-100 dark:border-zinc-800 px-4 sm:px-5 py-3 sm:py-3.5">
-        <p class="font-semibold text-sm" x-text="edu.school"></p>
-        <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-0.5" x-text="edu.degree"></p>
-        <p class="text-xs text-zinc-600 dark:text-zinc-500 mt-1" x-text="edu.year"></p>
-      </div>
-    </template>
-  </div>
-
-  <!-- ── CERTIFICATIONS ── -->
-  <div class="border border-gray-100 dark:border-zinc-800 rounded-xl overflow-hidden mb-3 animate-fade-up stagger-6">
-    <div class="px-4 sm:px-5 py-3 text-xs font-semibold tracking-widest uppercase text-black dark:text-zinc-500">Certifications</div>
-    <template x-for="cert in certifications" :key="cert.name">
-      <div class="border-t border-gray-100 dark:border-zinc-800 px-4 sm:px-5 py-3 sm:py-3.5">
-        <p class="font-semibold text-sm" x-text="cert.name"></p>
-        <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-0.5" x-text="cert.issuer"></p>
-        <p class="text-xs text-zinc-600 dark:text-zinc-500 mt-1" x-text="cert.year"></p>
-      </div>
-    </template>
-  </div>
-</body>
-</html>
