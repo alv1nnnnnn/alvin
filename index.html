@@ -34,7 +34,7 @@
 </head>
 
 <body class="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans text-sm antialiased transition-colors duration-300">
-<div class="max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-8 pb-16">
+<div class="max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-8 pb-16" x-data=" { avatarHovered: false }">
 
   <!-- ── HERO ── -->
   <div class="animate-fade-up mb-6">
@@ -43,16 +43,21 @@
     <div class="flex items-start gap-4 sm:gap-5">
 
       <!-- Avatar -->
-      <div class="flex-shrink-0 w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40 rounded-lg overflow-hidden border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 group relative">
+      <div class="flex-shrink-0 w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40 rounded-lg overflow-hidden border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 group relative cursor-pointer"
+           @mouseenter="avatarHovered = true"
+           @mouseleave="avatarHovered = false"
+           @click="avatarHovered = !avatarHovered">
         <img
             :src="dark ? '/images/alvin.jpeg' : '/images/alvin_light.png'"
             alt="Alvin Nario"
-            class="avatar-img w-full h-full object-cover object-top absolute opacity-100 group-hover:opacity-0 transition-opacity duration-300"
+            :class="avatarHovered ? 'opacity-0' : 'opacity-100'"
+            class="avatar-img w-full h-full object-cover object-top absolute transition-opacity duration-300"
         />
         <img
             :src="dark ? '/images/alvin1.jpeg' : '/images/alvin1_light.png'"
             alt="Alvin Nario Hover"
-            class="avatar-img w-full h-full object-cover object-top absolute opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            :class="avatarHovered ? 'opacity-100' : 'opacity-0'"
+            class="avatar-img w-full h-full object-cover object-top absolute transition-opacity duration-300"
         />
       </div>
 
