@@ -43,7 +43,7 @@
     <div class="flex items-start gap-4 sm:gap-5">
 
       <!-- Avatar -->
-      <div class="flex-shrink-0 w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40 rounded-lg overflow-hidden border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 group relative">
+      <div class="flex-shrink-0 w-35 h-35 rounded-lg overflow-hidden border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 group relative">
         <img
             :src="dark ? '/images/alvin.jpeg' : '/images/alvin_light.png'"
             alt="Alvin Nario"
@@ -59,9 +59,9 @@
       </div>
 
       <!-- Info block -->
-      <div class="flex-1 min-w-0 pt-0.5">
+      <div class="flex-1 min-w-0 pt-3">
         <!-- Name + verified -->
-        <div class="flex items-center gap-1.5 sm:gap-2 mb-0.5 flex-wrap">
+        <div class="flex items-center gap-1.5 sm:gap-2 mb-2 sm:mb-0.5 flex-wrap">
           <h1 class="text-2xl font-bold tracking-tight leading-none">Alvin Nario</h1>
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-badge-check text-white flex-shrink-0">
             <path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" fill="#2563EB" stroke="#2563EB"/>
@@ -70,16 +70,16 @@
         </div>
 
         <!-- Location — hidden on very small, shown sm+ -->
-        <p class="text-zinc-800 font-medium dark:text-zinc-400 text-xs sm:text-sm flex items-center gap-1 mb-1.5 sm:mb-2 mt-1 sm:mt-1.5">
+        <p class="text-black font-medium dark:text-white text-xs sm:text-sm flex items-center gap-1 mb-1.5 sm:mb-2 mt-1 sm:mt-1.5">
           <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
-          Castilla, Sorsogon, Philippines
+          Sorsogon, Philippines
         </p>
 
         <!-- Role -->
-        <p class="text-zinc-800 dark:text-zinc-400 font-medium text-base sm:text-lg mb-2 sm:mb-3">Backend Developer</p>
+        <p class="text-zinc-800 dark:text-white font-medium text-base sm:text-lg mb-1 sm:mb-1">Backend Developer</p>
 
         <!-- Action Buttons -->
-        <div class="flex flex-wrap items-center gap-2 mt-2 sm:mt-4 pt-2 sm:pt-4">
+        <div class="flex flex-wrap items-center gap-2 mt-3 sm:mt-0">
           <a href="mailto:alvinnario56@gmail.com"
              class="inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-lg border border-zinc-200 dark:border-zinc-700 text-xs font-medium hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors whitespace-nowrap">
             <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
@@ -93,7 +93,7 @@
       <!-- Theme Toggle -->
       <button
         @click="dark = !dark"
-        class="flex-shrink-0 w-8 h-8 sm:w-9 sm:h-9 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-800 flex items-center justify-center hover:bg-zinc-100 dark:hover:bg-zinc-700 transition-colors"
+        class="flex-shrink-0 w-8 h-8 sm:w-9 sm:h-9 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-800 flex items-center justify-center hover:bg-zinc-100 dark:hover:bg-zinc-700 transition-colors relative"
       >
         <svg x-show="!dark" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-600 dark:text-zinc-400"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
         <svg x-show="dark" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-400"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
@@ -104,7 +104,7 @@
   <!-- ── ABOUT ── -->
   <div class="border border-gray-100 dark:border-zinc-800 rounded-xl overflow-hidden mb-3 animate-fade-up stagger-2">
     <div class="px-4 sm:px-5 py-3 text-black text-base sm:text-lg font-bold tracking-widest dark:text-white">About</div>
-    <div class="px-4 sm:px-5 pb-5 space-y-3 text-zinc-700 dark:text-zinc-300 leading-relaxed text-sm">
+    <div class="px-4 sm:px-5 pb-5 space-y-3 text-black dark:text-white leading-relaxed text-sm">
       <p>I'm a Backend Developer with experience in building secure and scalable web applications using PHP Laravel, RESTful APIs, AWS, and MySQL. Skilled in working with teams and leading developers to deliver projects on time.</p>
       <p>Passionate about writing clean code and creating reliable systems that solve real-world problems. I've worked on university-level systems, internship projects, and full-stack web applications across various domains.</p>
       <p>I graduated Cum Laude with a BS in Information Technology from Bicol University, and I'm always looking for opportunities to grow and build meaningful software.</p>
@@ -128,10 +128,10 @@
 
           <div class="flex-1 min-w-0">
             <p class="font-semibold text-sm leading-snug" x-text="item.title"></p>
-            <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-0.5 leading-snug" x-text="item.company"></p>
+            <p class="text-xs text-black dark:text-white mt-0.5 leading-snug" x-text="item.company"></p>
           </div>
           <!-- Year: stacks below company on tiny screens -->
-          <span class="text-xs font-mono text-black dark:text-zinc-500 mt-0.5 whitespace-nowrap flex-shrink-0 text-right" x-text="item.year"></span>
+          <span class="text-xs font-mono text-black dark:text-white mt-0.5 whitespace-nowrap flex-shrink-0 text-right" x-text="item.year"></span>
         </div>
       </template>
     </div>
@@ -140,15 +140,15 @@
   <!-- ── TECH STACK ── -->
   <div class="border border-zinc-200 dark:border-zinc-800 rounded-xl overflow-hidden mb-3 animate-fade-up stagger-3">
     <div class="px-4 sm:px-5 py-3 flex items-center justify-between">
-      <span class="text-xs font-semibold tracking-widest uppercase text-black dark:text-zinc-500">Tech Stack</span>
+      <span class="text-xs font-semibold tracking-widest uppercase text-black dark:text-white">Tech Stack</span>
     </div>
     <div class="px-4 sm:px-5 pb-5 space-y-4">
       <template x-for="group in techStack" :key="group.label">
         <div>
-          <p class="text-xs font-semibold uppercase tracking-widest text-black dark:text-zinc-500 mb-2" x-text="group.label"></p>
+          <p class="text-xs font-semibold uppercase tracking-widest text-black dark:text-white mb-2" x-text="group.label"></p>
           <div class="flex flex-wrap gap-1.5">
             <template x-for="tech in group.items" :key="tech">
-              <span class="px-2.5 sm:px-3 py-1 rounded-full bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-xs font-medium text-zinc-700 dark:text-zinc-300 hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors cursor-default"
+              <span class="px-2.5 sm:px-3 py-1 rounded-full bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-xs font-medium text-black dark:text-white hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors cursor-default"
                     x-text="tech"></span>
             </template>
           </div>
@@ -160,16 +160,16 @@
   <!-- ── PROJECTS ── -->
   <div class="border border-zinc-200 dark:border-zinc-800 rounded-xl overflow-hidden mb-3 animate-fade-up stagger-3">
     <div class="px-4 sm:px-5 py-3 flex items-center justify-between">
-      <span class="text-xs font-semibold tracking-widest uppercase text-black dark:text-zinc-500">Projects</span>
+      <span class="text-xs font-semibold tracking-widest uppercase text-black dark:text-white">Projects</span>
     </div>
     <!-- 1 col on mobile, 2 cols on sm+ -->
     <div class="p-3 sm:p-4 grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-2.5">
       <template x-for="project in projects" :key="project.name">
         <div class="border border-zinc-200 dark:border-zinc-800 rounded-lg p-3 sm:p-3.5 flex flex-col gap-1">
           <p class="font-semibold text-sm leading-snug" x-text="project.name"></p>
-          <p class="text-xs text-zinc-500 dark:text-zinc-400 leading-snug flex-1" x-text="project.desc"></p>
+          <p class="text-xs text-black dark:text-white leading-snug flex-1" x-text="project.desc"></p>
           <div class="flex items-center justify-between mt-2 gap-2">
-            <p class="text-xs font-mono text-zinc-400 dark:text-zinc-500" x-text="project.year"></p>
+            <p class="text-xs font-mono text-black dark:text-white" x-text="project.year"></p>
             <template x-if="project.demo">
               <a :href="project.demo"
                  target="_blank"
@@ -201,16 +201,16 @@
   <!-- ── EDUCATION ── -->
   <div class="border border-zinc-200 dark:border-zinc-800 rounded-xl overflow-hidden mb-3 animate-fade-up stagger-4">
     <div class="px-4 sm:px-5 py-3 flex items-center justify-between">
-      <span class="text-xs font-semibold tracking-widest uppercase text-black dark:text-zinc-500">Education</span>
+      <span class="text-xs font-semibold tracking-widest uppercase text-black dark:text-white">Education</span>
     </div>
     <div class="divide-y divide-zinc-100 dark:divide-zinc-800/60">
       <template x-for="edu in education" :key="edu.school">
         <div class="px-4 sm:px-5 py-4 flex items-start justify-between gap-3 sm:gap-4">
           <div class="min-w-0 flex-1">
             <p class="font-semibold text-sm leading-snug" x-text="edu.degree"></p>
-            <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-0.5 leading-snug" x-text="edu.school"></p>
+            <p class="text-xs text-black dark:text-white mt-0.5 leading-snug" x-text="edu.school"></p>
           </div>
-          <span class="text-xs font-mono text-zinc-400 dark:text-zinc-500 whitespace-nowrap flex-shrink-0 mt-0.5" x-text="edu.year"></span>
+          <span class="text-xs font-mono text-black dark:text-white whitespace-nowrap flex-shrink-0 mt-0.5" x-text="edu.year"></span>
         </div>
       </template>
     </div>
@@ -219,14 +219,14 @@
   <!-- ── CERTIFICATIONS ── -->
   <div class="border border-zinc-200 dark:border-zinc-800 rounded-xl overflow-hidden mb-3 animate-fade-up stagger-4">
     <div class="px-4 sm:px-5 py-3 flex items-center justify-between">
-      <span class="text-xs font-semibold tracking-widest uppercase text-black dark:text-zinc-500">Certificates</span>
+      <span class="text-xs font-semibold tracking-widest uppercase text-black dark:text-white">Certificates</span>
     </div>
     <!-- 1 col mobile, 2 cols sm+ -->
     <div class="p-3 sm:p-4 grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-2.5">
       <template x-for="cert in certifications" :key="cert.name">
         <div class="border border-zinc-200 dark:border-zinc-800 rounded-lg p-3 sm:p-3.5 flex flex-col gap-0.5 hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-colors">
           <p class="font-semibold text-sm" x-text="cert.name"></p>
-          <p class="text-xs text-zinc-500 dark:text-zinc-400" x-text="cert.issuer"></p>
+          <p class="text-xs text-black dark:text-white" x-text="cert.issuer"></p>
         </div>
       </template>
     </div>
@@ -270,8 +270,8 @@
       ],
 
       projects: [
-        { name: 'Bicol University Merit System Promotion',                           desc: 'Backend using TALL stack + MinIO S3 for secure file storage and employee records.',             year: '2026',      demo: 'https://ibu.bicol-u.edu.ph/msp' },
-        { name: 'Bicol University Center of Excellence',                             desc: 'Backend system with Laravel, MySQL, user auth restricted to BU email accounts.',               year: '2025',      demo: 'https://coe.bicol-u.edu.ph/' },
+        { name: 'Bicol University Merit System Promotion',                           desc: 'Backend using TALL stack + MinIO S3 for secure file storage and employee records.',             year: '2026',      demo: '' },
+        { name: 'Bicol University Center of Excellence',                             desc: 'Backend system with Laravel, MySQL, user auth restricted to BU email accounts.',               year: '2025',      demo: '' },
         { name: 'Bicol University – University Student Council Website',             desc: 'Laravel & MySQL backend with custom database migrations and student council info management.', year: '2024–2026', demo: 'https://v2.bu-usc.com/' },
         { name: 'AgTech - Web Application for Farmer-Trader Market Optimization',   desc: 'Full-stack app for livestock, users, and transaction management with cloud deploy.',           year: '2024–2025', demo: 'https://agtech-livestock.infinityfree.me/' },
         { name: 'Employee Attendance System',                                        desc: 'Full-stack dashboard for time tracking, attendance records, and access control.',              year: '2024',      demo: '' },
