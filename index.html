@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Alvin Nario - Developer</title>
 
-  <!-- Entry point for Vite -->
-  <script type="module" src="/resources/js/app.js"></script>
+  <!-- Import Tailwind CSS via Vite -->
+  <link rel="stylesheet" href="/resources/css/app.css">
   
+  <!-- Load Alpine.js -->
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="shortcut icon" href="/images/alvin.jpeg" type="image/x-icon">
@@ -49,13 +50,11 @@
             :src="dark ? '/images/alvin.jpeg' : '/images/alvin_light.png'"
             alt="Alvin Nario"
             class="avatar-img w-full h-full object-cover object-top absolute opacity-100 group-hover:opacity-0 transition-opacity duration-300"
-            onerror="this.outerHTML='<div class=\\'w-full h-full flex items-center justify-center text-4xl\\'>👤</div>'"
         />
         <img
             :src="dark ? '/images/alvin1.jpeg' : '/images/alvin1_light.png'"
             alt="Alvin Nario Hover"
             class="avatar-img w-full h-full object-cover object-top absolute opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-            onerror="this.outerHTML='<div class=\\'w-full h-full flex items-center justify-center text-4xl\\'>👤</div>'"
         />
       </div>
 
@@ -103,5 +102,7 @@
   </div>
 
 </div>
+
+<script type="module" src="/resources/js/app.js"></script>
 </body>
 </html>
