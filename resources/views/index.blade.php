@@ -33,7 +33,7 @@
   </style>
 </head>
 
-<body class="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans text-sm antialiased transition-colors duration-300">
+<body class="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-white font-sans text-sm antialiased transition-colors duration-300">
 <div class="max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-8 pb-16">
 
   <!-- ── HERO ── -->
@@ -95,7 +95,7 @@
         @click="dark = !dark"
         class="flex-shrink-0 w-8 h-8 sm:w-9 sm:h-9 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-800 flex items-center justify-center hover:bg-zinc-100 dark:hover:bg-zinc-700 transition-colors relative"
       >
-        <svg x-show="!dark" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-600 dark:text-zinc-400"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+        <svg x-show="!dark" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-600 dark:text-white"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
         <svg x-show="dark" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-400"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
       </button>
     </div>
@@ -113,7 +113,7 @@
 
   <!-- ── EXPERIENCE ── -->
   <div class="border border-gray-100 dark:border-zinc-800 rounded-xl overflow-hidden mb-3 animate-fade-up stagger-2">
-    <div class="px-4 sm:px-5 py-3 text-xs font-semibold tracking-widest uppercase text-black dark:text-zinc-500">Experience</div>
+    <div class="px-4 sm:px-5 py-3 text-xs font-semibold tracking-widest uppercase text-black dark:text-white">Experience</div>
     <div class="relative">
       <div class="absolute left-4 sm:left-5 top-5 bottom-10 w-px bg-zinc-200 dark:bg-zinc-800"></div>
 
@@ -184,7 +184,7 @@
               </a>
             </template>
             <template x-if="!project.demo">
-              <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-zinc-50 dark:bg-zinc-800/60 border border-zinc-200 dark:border-zinc-700 text-xs font-medium text-zinc-400 dark:text-zinc-500 cursor-not-allowed select-none flex-shrink-0">
+              <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-zinc-50 dark:bg-zinc-800/60 border border-zinc-200 dark:border-zinc-700 text-xs font-medium text-zinc-400 dark:text-white cursor-not-allowed select-none flex-shrink-0">
                 <svg class="w-3 h-3 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                   <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
                   <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
@@ -234,18 +234,18 @@
 
   <!-- ── CONTACT ── -->
   <div class="border border-zinc-200 dark:border-zinc-800 rounded-xl overflow-hidden mb-3 animate-fade-up stagger-6">
-    <div class="px-4 sm:px-5 py-3 text-xs font-semibold tracking-widest uppercase text-black dark:text-zinc-500">Get in Touch</div>
+    <div class="px-4 sm:px-5 py-3 text-xs font-semibold tracking-widest uppercase text-black dark:text-white">Get in Touch</div>
     <div class="p-3 sm:p-4 grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-2.5">
       <a href="mailto:alvinnario56@gmail.com"
          class="border border-zinc-200 dark:border-zinc-800 rounded-lg p-3 flex flex-col gap-1 hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-colors">
-        <span class="text-xs font-semibold uppercase tracking-widest text-black dark:text-zinc-500">Email</span>
+        <span class="text-xs font-semibold uppercase tracking-widest text-black dark:text-white">Email</span>
         <span class="text-xs font-medium text-blue-600 break-all">alvinnario56@gmail.com</span>
       </a>
     </div>
   </div>
 
   <!-- ── FOOTER ── -->
-  <footer class="text-center text-xs text-black dark:text-zinc-600 pt-4 border-t border-zinc-100 dark:border-zinc-800 mt-2">
+  <footer class="text-center text-xs text-black dark:text-white pt-4 border-t border-zinc-100 dark:border-zinc-800 mt-2">
     © 2026 Alvin Nario. All rights reserved.
   </footer>
 
@@ -263,10 +263,12 @@
       ],
 
       techStack: [
-        { label: 'Frontend',       items: ['JavaScript', 'HTML5', 'CSS3', 'Bootstrap', 'Tailwind CSS', 'Alpine.js'] },
-        { label: 'Backend',        items: ['PHP', 'Laravel', 'Livewire', 'MySQL', 'RESTful APIs'] },
-        { label: 'Cloud & DevOps', items: ['AWS Lambda', 'DynamoDB', 'MinIO S3', 'Git', 'GitHub'] },
-        { label: 'Other',          items: ['API Integration', 'Technical Support', 'Troubleshooting', 'Team Collaboration'] },
+        { label: 'Frontend',       items: ['JavaScript', 'HTML5', 'CSS3', 'Bootstrap', 'Tailwind CSS', 'Alpine.js', 'Prettier', 'TypeScript', 'Vue.js', 'Next.js', 'React', 'Vite'] },
+        { label: 'Backend',        items: ['PHP', 'Laravel', 'Livewire', 'MySQL', 'AWS Lambda', 'DynamoDB', 'OAuth', 'JWT', 'REST'] },
+        { label: 'Cloud & DevOps', items: ['AWS', 'AWS CloudFormation', 'AWS API Gateway', 'MinIO S3', 'Grafana', 'Prometheus'] },
+        { label: 'Security & Identity', items: ['Auth0', 'AWS IAM', 'AES', 'RSA', 'SHA', 'Cognito', 'GitHub Actions'] },
+        { label: 'CMS & No-Code', items: ['WordPress'] },
+        { label: 'Developer Tools', items: ['Git', 'GitHub', 'VS Code', 'Postman', 'Discord', 'Notion'] },
       ],
 
       projects: [
