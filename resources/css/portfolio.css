@@ -48,6 +48,7 @@ h1 span { color: var(--accent); }
 nav { display: flex; flex-wrap: wrap; justify-content: center; gap: .25rem clamp(.55rem, 3vw, 2rem); }
 nav a { color: var(--muted); font-size: .875rem; font-weight: 700; text-decoration: none; }
 nav a:hover { color: var(--accent); text-decoration: underline; }
+nav a[aria-current="page"] { color: var(--accent); text-decoration: underline; text-underline-offset: .25em; }
 .theme-switch, .menu-toggle { display: grid; place-items: center; flex-shrink: 0; width: 2.75rem; height: 2.75rem; padding: 0; border: 1px solid var(--line); border-radius: 50%; background: var(--surface); color: var(--text); cursor: pointer; }
 .theme-switch svg, .menu-toggle svg { width: 1.2rem; height: 1.2rem; }
 .menu-toggle, .theme-switch .moon-icon, .dark .theme-switch .sun-icon { display: none; }
@@ -92,6 +93,11 @@ h3 { font-size: 1.05rem; font-weight: 800; line-height: 1.35; }
 .project-link { font-size: .875rem; }
 .project-status { color: var(--muted); font-size: .875rem; font-weight: 700; }
 .skills-grid, .credentials { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem 3rem; }
+.listing-page { padding-top: clamp(2rem, 6vw, 5rem); }
+.listing-page h1 { font-size: clamp(2.75rem, 8vw, 5.5rem); }
+.listing-page .skills-grid, #tech-stack .skills-grid { margin-top: 1.5rem; }
+.listing-page footer { margin-top: 2rem; border-top: 1px solid var(--line); }
+.section-link { margin-top: 1.5rem; }
 .tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .65rem; }
 .tags li { padding: .25rem .65rem; border: 1px solid var(--line); border-radius: .5rem; background: var(--surface); color: var(--muted); font-size: .875rem; }
 .entries li { padding-block: .9rem; border-bottom: 1px solid var(--line); }
