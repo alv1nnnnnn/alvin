@@ -48,8 +48,10 @@ h1 span { color: var(--accent); }
 nav { display: flex; flex-wrap: wrap; justify-content: center; gap: .25rem clamp(.55rem, 3vw, 2rem); }
 nav a { color: var(--muted); font-size: .875rem; font-weight: 700; text-decoration: none; }
 nav a:hover { color: var(--accent); text-decoration: underline; }
-.theme-switch { display: grid; place-items: center; flex: 0 0 2.75rem; height: 2.75rem; border: 1px solid var(--line); border-radius: 50%; background: var(--surface); color: var(--text); cursor: pointer; }
-.theme-switch svg { width: 1.2rem; height: 1.2rem; }
+.theme-switch, .menu-toggle { display: grid; place-items: center; flex-shrink: 0; width: 2.75rem; height: 2.75rem; padding: 0; border: 1px solid var(--line); border-radius: 50%; background: var(--surface); color: var(--text); cursor: pointer; }
+.theme-switch svg, .menu-toggle svg { width: 1.2rem; height: 1.2rem; }
+.menu-toggle, .theme-switch .moon-icon, .dark .theme-switch .sun-icon { display: none; }
+.dark .theme-switch .moon-icon { display: block; }
 
 .hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .59fr); align-items: center; gap: clamp(2rem, 7vw, 6rem); padding-block: clamp(3rem, 9vw, 7.5rem); }
 .eyebrow, .date { font-family: 'JetBrains Mono', monospace; font-size: .875rem; }
@@ -61,7 +63,7 @@ h1 { font-size: clamp(3.5rem, 9vw, 7.25rem); line-height: .98; letter-spacing: -
 .actions, .socials { display: flex; flex-wrap: wrap; gap: .625rem; }
 .actions { margin-top: 1.65rem; }
 .button { display: inline-flex; align-items: center; min-height: 2.75rem; padding: .5rem 1rem; border: 1px solid var(--line); border-radius: .65rem; background: var(--surface); font-size: .875rem; font-weight: 800; text-decoration: none; }
-.button:hover, .theme-switch:hover { border-color: var(--accent); }
+.button:hover, .theme-switch:hover, .menu-toggle:hover { border-color: var(--accent); }
 .primary { border-color: var(--button); background: var(--button); color: var(--button-text); }
 .primary:hover { opacity: .88; }
 
@@ -109,26 +111,27 @@ footer { padding-block: 1.5rem; font-size: .875rem; }
   .hero { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; padding-block: 2rem; }
   h1 { font-size: clamp(2.75rem, 11vw, 4.5rem); }
   .intro { font-size: 1rem; }
-  .portrait { width: min(100%, 18rem); justify-self: center; }
+  .portrait { grid-row: 1; width: min(100%, 18rem); justify-self: center; }
   .split, .credentials { grid-template-columns: minmax(0, 1fr); }
   .timeline-entry { flex-direction: column; }
   .project-link, .email { display: inline-flex; align-items: center; min-height: 2.75rem; }
   .contact > div { min-width: 0; }
-}
-
-@media (max-width: 36rem) {
-  [id] { scroll-margin-top: 7.5rem; }
-  .header-inner {
-    display: grid;
-    grid-template: "logo theme" auto "nav nav" auto / minmax(0, 1fr) auto;
-    gap: 0 .75rem;
-    padding-block: .375rem;
-  }
-  .wordmark { grid-area: logo; justify-self: start; }
+  .header-inner { position: relative; justify-content: flex-start; gap: .5rem; }
+  .wordmark { margin-right: auto; }
   .wordmark img { width: 2.75rem; }
-  .theme-switch { grid-area: theme; width: 2.75rem; }
-  nav { grid-area: nav; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .25rem; }
-  nav a { display: grid; place-items: center; min-height: 2.75rem; text-align: center; overflow-wrap: anywhere; }
+  .menu-toggle { display: grid; }
+  .site-header nav {
+    display: none;
+    position: absolute;
+    inset: 100% 0 auto;
+    grid-template-columns: minmax(0, 1fr);
+    padding: .5rem;
+    border: 1px solid var(--line);
+    border-radius: .75rem;
+    background: var(--surface);
+  }
+  .site-header nav.is-open { display: grid; }
+  nav a { display: flex; align-items: center; min-height: 2.75rem; padding-inline: .75rem; }
 }
 
 @media (max-width: 30rem) {

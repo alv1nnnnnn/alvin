@@ -39,8 +39,7 @@
   <!-- ── HERO ── -->
   <div class="animate-fade-up mb-6">
 
-    <!-- Row: Avatar | Info | Toggle -->
-    <div class="flex items-start gap-3 sm:gap-5">
+    <div class="grid grid-cols-[minmax(0,1fr)_auto] items-start gap-3 sm:grid-cols-[auto_minmax(0,1fr)_auto] sm:gap-5">
 
       <!-- Avatar -->
       <div class="flex-shrink-0 size-16 sm:size-35 rounded-lg overflow-hidden border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 group relative">
@@ -59,7 +58,7 @@
       </div>
 
       <!-- Info block -->
-      <div class="flex-1 min-w-0 pt-0.5 sm:pt-3">
+      <div class="col-span-2 col-start-1 row-start-2 min-w-0 pt-0.5 sm:col-span-1 sm:col-start-2 sm:row-start-1 sm:pt-3">
         <!-- Name + verified -->
         <div class="flex items-center gap-1.5 sm:gap-2 mb-2 sm:mb-0.5 flex-wrap">
           <h1 class="text-xl sm:text-2xl font-bold tracking-tight leading-none">Alvin Nario</h1>
@@ -103,10 +102,10 @@
         aria-label="Dark mode"
         :aria-pressed="dark"
         @click="dark = !dark"
-        class="flex-shrink-0 size-11 sm:size-9 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-800 flex items-center justify-center hover:bg-zinc-100 dark:hover:bg-zinc-700 transition-colors relative"
+        class="col-start-2 row-start-1 sm:col-start-3 size-11 sm:size-9 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-800 grid place-items-center p-0 hover:bg-zinc-100 dark:hover:bg-zinc-700 transition-colors"
       >
-        <svg x-show="!dark" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-600 dark:text-white"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
-        <svg x-show="dark" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-400"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+        <svg x-show="!dark" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-600 dark:text-white"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+        <svg x-show="dark" x-cloak aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-400"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
       </button>
     </div>
   </div>
