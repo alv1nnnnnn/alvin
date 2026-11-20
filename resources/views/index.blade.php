@@ -40,10 +40,10 @@
   <div class="animate-fade-up mb-6">
 
     <!-- Row: Avatar | Info | Toggle -->
-    <div class="flex items-start gap-4 sm:gap-5">
+    <div class="flex items-start gap-3 sm:gap-5">
 
       <!-- Avatar -->
-      <div class="flex-shrink-0 w-35 h-35 rounded-lg overflow-hidden border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 group relative">
+      <div class="flex-shrink-0 size-16 sm:size-35 rounded-lg overflow-hidden border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 group relative">
         <img
             :src="dark ? '/images/alvin.png' : '/images/alvin_light.png'"
             alt="Alvin Nario"
@@ -59,7 +59,7 @@
       </div>
 
       <!-- Info block -->
-      <div class="flex-1 min-w-0 pt-3">
+      <div class="flex-1 min-w-0 pt-0.5 sm:pt-3">
         <!-- Name + verified -->
         <div class="flex items-center gap-1.5 sm:gap-2 mb-2 sm:mb-0.5 flex-wrap">
           <h1 class="text-xl sm:text-2xl font-bold tracking-tight leading-none">Alvin Nario</h1>
@@ -69,8 +69,8 @@
           </svg>
         </div>
 
-        <!-- Location — hidden on very small, shown sm+ -->
-        <p class="text-black font-medium dark:text-white text-[10px] sm:text-sm flex items-center gap-1 mb-1.5 sm:mb-2 mt-1 sm:mt-1.5">
+        <!-- Location -->
+        <p class="text-black font-medium dark:text-white text-xs sm:text-sm flex items-center gap-1 mb-1.5 sm:mb-2 mt-1 sm:mt-1.5">
           <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
           Sorsogon, Philippines
         </p>
@@ -81,14 +81,14 @@
         <!-- Action Buttons -->
         <div class="flex flex-wrap items-center gap-2 mt-3 sm:mt-0">
           <a href="mailto:alvinnario56@gmail.com"
-             class="inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-lg border border-zinc-200 dark:border-zinc-700 text-xs font-medium hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors whitespace-nowrap">
+             class="inline-flex min-h-11 sm:min-h-0 items-center gap-1.5 px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-lg border border-zinc-200 dark:border-zinc-700 text-xs font-medium hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors">
             <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
               <rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/>
             </svg>
             Send Email
           </a>
           <a href="/Resume.pdf" target="_blank" rel="noopener noreferrer"
-             class="inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-lg border border-zinc-200 dark:border-zinc-700 text-xs font-medium hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors whitespace-nowrap">
+             class="inline-flex min-h-11 sm:min-h-0 items-center gap-1.5 px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-lg border border-zinc-200 dark:border-zinc-700 text-xs font-medium hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors">
             <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
               <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/>
             </svg>
@@ -99,8 +99,11 @@
 
       <!-- Theme Toggle -->
       <button
+        type="button"
+        aria-label="Dark mode"
+        :aria-pressed="dark"
         @click="dark = !dark"
-        class="flex-shrink-0 w-8 h-8 sm:w-9 sm:h-9 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-800 flex items-center justify-center hover:bg-zinc-100 dark:hover:bg-zinc-700 transition-colors relative"
+        class="flex-shrink-0 size-11 sm:size-9 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-800 flex items-center justify-center hover:bg-zinc-100 dark:hover:bg-zinc-700 transition-colors relative"
       >
         <svg x-show="!dark" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-600 dark:text-white"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
         <svg x-show="dark" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-400"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
@@ -125,7 +128,7 @@
       <div class="absolute left-4 sm:left-5 top-5 bottom-10 w-px bg-zinc-200 dark:bg-zinc-800"></div>
 
       <template x-for="(item, i) in experience" :key="i">
-        <div class="group flex items-start justify-between px-4 sm:px-5 py-3 sm:py-3.5 hover:cursor-pointer dark:hover:bg-zinc-900/50 transition-colors relative gap-2 sm:gap-4">
+        <div class="group grid grid-cols-[auto_minmax(0,1fr)] sm:grid-cols-[auto_minmax(0,1fr)_auto] items-start px-4 sm:px-5 py-3 sm:py-3.5 hover:cursor-pointer dark:hover:bg-zinc-900/50 transition-colors relative gap-x-2 gap-y-1 sm:gap-x-4">
           <!-- Square dot indicator -->
           <div class="flex-shrink-0 w-3 h-3 rounded-sm border-2 mt-1 -ml-1.5 mr-3 sm:mr-4 relative z-10 transition-colors duration-200"
                :class="i === 0
@@ -138,7 +141,7 @@
             <p class="text-xs text-black dark:text-white mt-0.5 leading-snug" x-text="item.company"></p>
           </div>
           <!-- Year: stacks below company on tiny screens -->
-          <span class="text-xs font-mono text-black dark:text-white mt-0.5 whitespace-nowrap flex-shrink-0 text-right" x-text="item.year"></span>
+          <span class="col-start-2 sm:col-start-auto text-xs font-mono text-black dark:text-white sm:mt-0.5 sm:text-right" x-text="item.year"></span>
         </div>
       </template>
     </div>

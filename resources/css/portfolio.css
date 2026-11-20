@@ -106,15 +106,37 @@ footer { padding-block: 1.5rem; font-size: .875rem; }
 
 @media (max-width: 42rem) {
   .shell { width: calc(100% - 2rem); }
-  .hero { grid-template-columns: 1fr; }
-  .portrait { width: min(100%, 18rem); }
-  .split, .credentials { grid-template-columns: 1fr; }
+  .hero { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; padding-block: 2rem; }
+  h1 { font-size: clamp(2.75rem, 11vw, 4.5rem); }
+  .intro { font-size: 1rem; }
+  .portrait { width: min(100%, 18rem); justify-self: center; }
+  .split, .credentials { grid-template-columns: minmax(0, 1fr); }
+  .timeline-entry { flex-direction: column; }
+  .project-link, .email { display: inline-flex; align-items: center; min-height: 2.75rem; }
+  .contact > div { min-width: 0; }
+}
+
+@media (max-width: 36rem) {
+  [id] { scroll-margin-top: 7.5rem; }
+  .header-inner {
+    display: grid;
+    grid-template: "logo theme" auto "nav nav" auto / minmax(0, 1fr) auto;
+    gap: 0 .75rem;
+    padding-block: .375rem;
+  }
+  .wordmark { grid-area: logo; justify-self: start; }
+  .wordmark img { width: 2.75rem; }
+  .theme-switch { grid-area: theme; width: 2.75rem; }
+  nav { grid-area: nav; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .25rem; }
+  nav a { display: grid; place-items: center; min-height: 2.75rem; text-align: center; overflow-wrap: anywhere; }
 }
 
 @media (max-width: 30rem) {
-  .project-grid, .skills-grid { grid-template-columns: 1fr; }
-  .header-inner { gap: .5rem; }
-  .wordmark img { width: 2.75rem; }
+  .project-grid, .skills-grid { grid-template-columns: minmax(0, 1fr); }
+  .actions .button { flex: 1 1 auto; justify-content: center; text-align: center; }
+  .contact { align-items: stretch; flex-direction: column; gap: .75rem; }
+  .socials li { flex: 1 1 auto; }
+  .socials .button { display: flex; justify-content: center; }
 }
 
 @media (prefers-reduced-motion: reduce) {
