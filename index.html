@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Alvin Nario, full-stack developer in Sorsogon, Philippines. Explore work experience, projects, and technical skills.">
   <title>Alvin Nario | Full-Stack Developer</title>
-  <link rel="icon" href="/images/alvin.png">
+  <link rel="icon" type="image/png" href="/images/logo-light.png"
+        :href="dark ? '/images/logo-dark.png' : '/images/logo-light.png'">
   <script>
     let theme
     try {
@@ -26,7 +27,10 @@
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="shell header-inner">
-      <a class="wordmark" href="#main">Alvin<span>.</span></a>
+      <a class="wordmark" href="#main" aria-label="Alvin Nario home">
+        <img src="/images/logo-light.png" :src="dark ? '/images/logo-dark.png' : '/images/logo-light.png'"
+             alt="" width="56" height="56">
+      </a>
       <nav aria-label="Main navigation">
         <a href="#projects">Projects</a>
         <a href="#experience">Experience</a>
@@ -86,8 +90,11 @@
             <h3 x-text="project.name"></h3>
             <p x-text="project.desc"></p>
             <template x-if="project.demo">
-              <a class="project-link" :href="project.demo" :aria-label="(project.linkLabel || 'Live demo') + ' — ' + project.name"
-                 target="_blank" rel="noopener noreferrer" x-text="project.linkLabel || 'Live demo'"></a>
+              <a class="project-link" :href="project.demo" :aria-label="'Visit website — ' + project.name"
+                 target="_blank" rel="noopener noreferrer">Visit website</a>
+            </template>
+            <template x-if="!project.demo">
+              <span class="project-status">Private</span>
             </template>
           </article>
         </template>
@@ -167,7 +174,7 @@
 
       experience: [
         { title: 'Junior Programmer',               company: 'Bicol University ICT Office',                  year: 'Oct 2025 – Present' },
-        { title: 'WordPress Developer', year: 'June – September 2026' },
+        { title: 'WordPress Developer', company: 'EP Social', year: 'June – September 2026' },
         { title: 'Backend Developer',               company: 'Bicol University – University Student Council', year: 'Aug 2024 – July 2026' },
         { title: 'Internship (Backend Developer)',   company: 'StraStan Solutions Corp.',                     year: 'Feb – May 2025' },
       ],
@@ -182,17 +189,18 @@
       ],
 
       projects: [
-        { name: 'EP Social', desc: 'Website for a digital marketing agency offering Google Ads, Meta Ads, and social media marketing for small businesses.', demo: 'https://ep-social.com/', linkLabel: 'Visit website' },
-        { name: 'A6 Lås & Larm', desc: 'Website for a Jönköping automotive locksmith offering car key replacement, repairs, and help with lost keys.', demo: 'https://a6security.se/', linkLabel: 'Visit website' },
-        { name: 'Audi Bilnyckel', desc: 'Service website for Audi car key replacement, repair, and programming.', demo: 'https://audibilnyckel.se/', linkLabel: 'Visit website' },
-        { name: 'Volvo Bilnyckel', desc: 'Service website for Volvo car key replacement, repair, and programming.', demo: 'https://volvobilnyckel.se/', linkLabel: 'Visit website' },
+        { name: 'Hotel Staylong', desc: 'Website for an apartment hotel in Täby, north of Stockholm, with apartment listings and booking for short and extended stays.', demo: 'https://staylong.se/en/' },
+        { name: 'EP Social', desc: 'Website for a digital marketing agency offering Google Ads, Meta Ads, and social media marketing for small businesses.', demo: 'https://ep-social.com/' },
+        { name: 'A6 Lås & Larm', desc: 'Website for a Jönköping automotive locksmith offering car key replacement, repairs, and help with lost keys.', demo: 'https://a6security.se/' },
+        { name: 'Audi Bilnyckel', desc: 'Service website for Audi car key replacement, repair, and programming.', demo: 'https://audibilnyckel.se/' },
+        { name: 'Volvo Bilnyckel', desc: 'Service website for Volvo car key replacement, repair, and programming.', demo: 'https://volvobilnyckel.se/' },
         { name: 'Bicol University Property Management and Monitoring System',                           desc: 'Created the Property Module Management using Filament',             year: '2026',      demo: '' },
         { name: 'Plate — Restaurant Finder',                                         desc: 'Plate is a modern, full-stack web app that lets users search for restaurants in any city around the world. It is built with a clean separation between a React frontend and a Node.js/Express backend, using the Yelp Fusion API as its data source.',                 year: '2026',      demo: '' },
         { name: 'Bicol University Merit System Promotion',                           desc: 'Backend using TALL stack + MinIO S3 for secure file storage and employee records.',             year: '2026',      demo: '' },
-        { name: 'Bicol University – University Student Council Website',             desc: 'Laravel & MySQL backend with custom database migrations and student council info management.', year: '2024–2026', demo: 'https://v2.bu-usc.com/' },
+        { name: 'Bicol University – University Student Council Website',             desc: 'Laravel & MySQL backend with custom database migrations and student council info management.', year: '2024–2026', demo: '' },
         { name: 'Solutions Chapter Business Excellence Platform',                    desc: 'A cloud-based CMS deployed on AWS, integrating DynamoDB for dynamic content management and high-performance scalability. Built and maintained REST APIs for seamless frontend-backend communication, while collaborating with UX/UI teams to deliver customer-facing features with optimized security and uptime.', year: '2025',      demo: 'https://www.solutionschapter.com/' },
         { name: 'Bicol University Center of Excellence',                             desc: 'Backend system with Laravel, MySQL, user auth restricted to BU email accounts.',               year: '2025',      demo: '' },
-        { name: 'AgTech - Web Application for Farmer-Trader Market Optimization',   desc: 'Full-stack app for livestock, users, and transaction management with cloud deploy.',           year: '2024–2025', demo: 'https://agtech-livestock.infinityfree.me/' },
+        { name: 'AgTech - Web Application for Farmer-Trader Market Optimization',   desc: 'Full-stack app for livestock, users, and transaction management with cloud deploy.',           year: '2024–2025', demo: '' },
         { name: 'Employee Attendance System',                                        desc: 'Full-stack dashboard for time tracking, attendance records, and access control.',              year: '2024',      demo: '' },
         { name: 'Unboxed E-Commerce Platform',                                       desc: 'Personal e-commerce site with order processing and product catalog features.',                 year: '2024',      demo: '' },
       ],

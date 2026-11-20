@@ -42,8 +42,9 @@ button { font: inherit; }
 .skip-link:focus { transform: translateY(0); }
 .site-header { position: sticky; top: 0; z-index: 1; background: var(--background); border-bottom: 1px solid var(--line); }
 .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 4.5rem; }
-.wordmark { font-size: 1.35rem; font-weight: 800; letter-spacing: -.05em; text-decoration: none; }
-.wordmark span, h1 span { color: var(--accent); }
+.wordmark { flex-shrink: 0; border-radius: .5rem; }
+.wordmark img { display: block; width: 3.5rem; height: auto; }
+h1 span { color: var(--accent); }
 nav { display: flex; flex-wrap: wrap; justify-content: center; gap: .25rem clamp(.55rem, 3vw, 2rem); }
 nav a { color: var(--muted); font-size: .875rem; font-weight: 700; text-decoration: none; }
 nav a:hover { color: var(--accent); text-decoration: underline; }
@@ -87,6 +88,7 @@ h3 { font-size: 1.05rem; font-weight: 800; line-height: 1.35; }
 .project p { flex: 1; }
 .project-link, .email { color: var(--accent); font-weight: 800; text-underline-offset: .25em; }
 .project-link { font-size: .875rem; }
+.project-status { color: var(--muted); font-size: .875rem; font-weight: 700; }
 .skills-grid, .credentials { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem 3rem; }
 .tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .65rem; }
 .tags li { padding: .25rem .65rem; border: 1px solid var(--line); border-radius: .5rem; background: var(--surface); color: var(--muted); font-size: .875rem; }
@@ -112,7 +114,7 @@ footer { padding-block: 1.5rem; font-size: .875rem; }
 @media (max-width: 30rem) {
   .project-grid, .skills-grid { grid-template-columns: 1fr; }
   .header-inner { gap: .5rem; }
-  .wordmark { font-size: 1.1rem; }
+  .wordmark img { width: 2.75rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
